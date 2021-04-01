@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/productListFragment">
+
+    <fragment
+        android:id="@+id/productListFragment"
+        android:name="com.delivery.hero.productlist.ProductListFragment"
+        android:label="Product List" />
+
+    <fragment
+        android:id="@+id/productDetailFragment"
+        android:name="com.delivery.hero.productdetail.ProductDetailFragment"
+        android:label="Product Detail" >
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="foodora://product/?id={id}" />
+
+        <argument android:name="id" app:argType="string"/>
+    </fragment>
+</navigation>
